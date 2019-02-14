@@ -1,0 +1,10 @@
+﻿main.obj : error LNK2019: "public: __cdecl BackgroundRemover::BackgroundRemover(void)" (??0BackgroundRemover@@QEAA@XZ) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: void __cdecl BackgroundRemover::calibrate(class cv::Mat)" (?calibrate@BackgroundRemover@@QEAAXVMat@cv@@@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: class cv::Mat __cdecl BackgroundRemover::getForeground(class cv::Mat)" (?getForeground@BackgroundRemover@@QEAA?AVMat@cv@@V23@@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: __cdecl SkinDetector::SkinDetector(void)" (??0SkinDetector@@QEAA@XZ) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: void __cdecl SkinDetector::drawSkinColorSampler(class cv::Mat)" (?drawSkinColorSampler@SkinDetector@@QEAAXVMat@cv@@@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: void __cdecl SkinDetector::calibrate(class cv::Mat)" (?calibrate@SkinDetector@@QEAAXVMat@cv@@@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: class cv::Mat __cdecl SkinDetector::getSkinMask(class cv::Mat)" (?getSkinMask@SkinDetector@@QEAA?AVMat@cv@@V23@@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: __cdecl FaceDetector::FaceDetector(void)" (??0FaceDetector@@QEAA@XZ) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+main.obj : error LNK2019: "public: void __cdecl FaceDetector::removeFaces(class cv::Mat,class cv::Mat)" (?removeFaces@FaceDetector@@QEAAXVMat@cv@@0@Z) 외부 기호(참조 위치: main 함수)에서 확인하지 못했습니다.
+C:\Users\USER\Documents\Visual Studio 2015\Projects\realsense\Prat2\x64\Debug\ex-01.exe : fatal error LNK1120: 9개의 확인할 수 없는 외부 참조입니다.
