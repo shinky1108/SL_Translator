@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SkinCaptrue", "SkinCaptrue\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraCapture", "CameraCapture\CameraCapture.vcxproj", "{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HandRecognition(opencv1)", "HandRecognition(opencv1)\HandRecognition(opencv1).vcxproj", "{A10BF6BF-F926-48C6-807B-87302306DBFB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x64.Build.0 = Release|x64
 		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x86.ActiveCfg = Release|Win32
 		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x86.Build.0 = Release|Win32
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Debug|x64.ActiveCfg = Debug|x64
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Debug|x64.Build.0 = Debug|x64
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Debug|x86.ActiveCfg = Debug|Win32
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Debug|x86.Build.0 = Debug|Win32
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Release|x64.ActiveCfg = Release|x64
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Release|x64.Build.0 = Release|x64
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Release|x86.ActiveCfg = Release|Win32
+		{A10BF6BF-F926-48C6-807B-87302306DBFB}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
