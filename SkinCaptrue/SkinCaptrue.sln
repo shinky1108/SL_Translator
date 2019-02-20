@@ -5,6 +5,8 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SkinCaptrue", "SkinCaptrue\SkinCaptrue.vcxproj", "{0AE7F2F0-CEBF-47EC-86A2-B0FFC8BD3D52}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CameraCapture", "CameraCapture\CameraCapture.vcxproj", "{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{0AE7F2F0-CEBF-47EC-86A2-B0FFC8BD3D52}.Release|x64.Build.0 = Release|x64
 		{0AE7F2F0-CEBF-47EC-86A2-B0FFC8BD3D52}.Release|x86.ActiveCfg = Release|Win32
 		{0AE7F2F0-CEBF-47EC-86A2-B0FFC8BD3D52}.Release|x86.Build.0 = Release|Win32
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Debug|x64.ActiveCfg = Debug|x64
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Debug|x64.Build.0 = Debug|x64
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Debug|x86.ActiveCfg = Debug|Win32
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Debug|x86.Build.0 = Debug|Win32
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x64.ActiveCfg = Release|x64
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x64.Build.0 = Release|x64
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x86.ActiveCfg = Release|Win32
+		{FDD439DF-CF9A-4AD4-9BCC-2F1A48CCF948}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
