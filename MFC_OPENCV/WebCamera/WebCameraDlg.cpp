@@ -6,6 +6,10 @@
 #include "WebCamera.h"
 #include "WebCameraDlg.h"
 #include "afxdialogex.h"
+#include <windows.h>
+
+#include "iostream"
+#include <stdio.h>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -186,22 +190,8 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 	cvtColor(tmpImg, frame, CV_BGR2YCrCb);
 	inRange(frame, Scalar(0, 133, 50), Scalar(255, 173, 127), frame);
 	
-	//
 
-	//if (flag == 1) {
 
-	//	sprintf(buf, "c:/temp/img_%06d.jpg", index);
-	//	//cout << buf << endl; 저장된 파일 이름.
-	//	imwrite(buf, frame);
-	//	//캡쳐 실행
-
-	//	//**소매 걷고 찍기**
-	//	index++;
-	//	if (index == 999999) index = 0;
-	//	_sleep(50);
-	//}
-
-	//add(tmpImg, Scalar(0), mat_skin, frame);
 
 
 	//화면에 보여주기 위한 처리입니다.
@@ -308,14 +298,20 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 	HDC dc = ::GetDC(m_picture.m_hWnd);
 	cimage_mfc.BitBlt(dc, 0, 0);
 
+	if (flag == 1) {
+//start눌렀을 때 사진 찍기 시작
+
+
+	}
+
+
+
 
 	::ReleaseDC(m_picture.m_hWnd, dc);
-
-
-
-
 	tmpImg.release();
 	frame.release();
+	mat_temp.release();
+
 	cimage_mfc.ReleaseDC();
 	cimage_mfc.Destroy();
 	destroyAllWindows();
