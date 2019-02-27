@@ -39,6 +39,7 @@ CAboutDlg::CAboutDlg() : CDialogEx(IDD_ABOUTBOX)
 void CAboutDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+
 }
 
 BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
@@ -67,6 +68,9 @@ BEGIN_MESSAGE_MAP(CWebCameraDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_WM_TIMER()
 	ON_WM_DESTROY()
+	ON_BN_CLICKED(IDC_START, &CWebCameraDlg::OnBnClickedStart)
+	ON_BN_CLICKED(IDC_End, &CWebCameraDlg::OnBnClickedEnd)
+	ON_BN_CLICKED(IDCANCEL, &CWebCameraDlg::OnBnClickedCancel)
 END_MESSAGE_MAP()
 
 
@@ -102,6 +106,7 @@ BOOL CWebCameraDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 작은 아이콘을 설정합니다.
 
 	// TODO: 여기에 추가 초기화 작업을 추가합니다.
+	flag = 0;
 
 	capture = new VideoCapture(0);
 	if (!capture->isOpened()) {
@@ -109,7 +114,7 @@ BOOL CWebCameraDlg::OnInitDialog()
 
 	}
 	capture->set(CV_CAP_PROP_FRAME_WIDTH, 320);
-	capture->set(CV_CAP_PROP_FRAME_HEIGHT, 320);
+	capture->set(CV_CAP_PROP_FRAME_HEIGHT, 240);
 
 	SetTimer(1000, 30, NULL);
 
@@ -180,6 +185,21 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 	//여기에서는 그레이스케일 이미지로 변환합니다.
 	cvtColor(tmpImg, frame, CV_BGR2YCrCb);
 	inRange(frame, Scalar(0, 133, 50), Scalar(255, 173, 127), frame);
+	
+	
+
+	if (flag == 1) {
+
+		sprintf(buf, "c:/temp/img_%06d.jpg", index);
+		//cout << buf << endl; 저장된 파일 이름.
+		imwrite(buf, frame);
+		//캡쳐 실행
+
+		//**소매 걷고 찍기**
+		index++;
+		if (index == 999999) index = 0;
+		_sleep(50);
+	}
 
 	//add(tmpImg, Scalar(0), mat_skin, frame);
 
@@ -291,8 +311,14 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 
 	::ReleaseDC(m_picture.m_hWnd, dc);
 
+
+
+
+	tmpImg.release();
+	frame.release();
 	cimage_mfc.ReleaseDC();
 	cimage_mfc.Destroy();
+	destroyAllWindows();
 
 	CDialogEx::OnTimer(nIDEvent);
 }
@@ -303,4 +329,25 @@ void CWebCameraDlg::OnDestroy()
 	CDialogEx::OnDestroy();
 
 	// TODO: 여기에 메시지 처리기 코드를 추가합니다.
+}
+
+
+void CWebCameraDlg::OnBnClickedStart()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	flag = 1;
+}
+
+
+void CWebCameraDlg::OnBnClickedEnd()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	flag = 0;
+}
+
+
+void CWebCameraDlg::OnBnClickedCancel()
+{
+	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	CDialogEx::OnCancel();
 }
