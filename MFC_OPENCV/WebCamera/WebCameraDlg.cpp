@@ -186,20 +186,20 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 	cvtColor(tmpImg, frame, CV_BGR2YCrCb);
 	inRange(frame, Scalar(0, 133, 50), Scalar(255, 173, 127), frame);
 	
-	
+	//
 
-	if (flag == 1) {
+	//if (flag == 1) {
 
-		sprintf(buf, "c:/temp/img_%06d.jpg", index);
-		//cout << buf << endl; 저장된 파일 이름.
-		imwrite(buf, frame);
-		//캡쳐 실행
+	//	sprintf(buf, "c:/temp/img_%06d.jpg", index);
+	//	//cout << buf << endl; 저장된 파일 이름.
+	//	imwrite(buf, frame);
+	//	//캡쳐 실행
 
-		//**소매 걷고 찍기**
-		index++;
-		if (index == 999999) index = 0;
-		_sleep(50);
-	}
+	//	//**소매 걷고 찍기**
+	//	index++;
+	//	if (index == 999999) index = 0;
+	//	_sleep(50);
+	//}
 
 	//add(tmpImg, Scalar(0), mat_skin, frame);
 
@@ -349,5 +349,6 @@ void CWebCameraDlg::OnBnClickedEnd()
 void CWebCameraDlg::OnBnClickedCancel()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	AfxGetMainWnd()->PostMessage(WM_CLOSE);
 	CDialogEx::OnCancel();
 }
