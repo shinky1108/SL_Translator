@@ -117,8 +117,8 @@ BOOL CWebCameraDlg::OnInitDialog()
 		MessageBox(_T("캠을 열 수 없습니다"));
 
 	}
-	capture->set(CV_CAP_PROP_FRAME_WIDTH, 320);
-	capture->set(CV_CAP_PROP_FRAME_HEIGHT, 240);
+	capture->set(CAP_PROP_FRAME_WIDTH, 320);
+	capture->set(CAP_PROP_FRAME_HEIGHT, 240);
 
 	SetTimer(1000, 30, NULL);
 
@@ -187,7 +187,7 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 	//이곳에 OpenCV 함수들을 적용합니다.
 
 	//여기에서는 그레이스케일 이미지로 변환합니다.
-	cvtColor(tmpImg, frame, CV_BGR2YCrCb);
+	cvtColor(tmpImg, frame, COLOR_BGR2YCrCb);
 	inRange(frame, Scalar(0, 133, 50), Scalar(255, 173, 127), frame);
 	
 
@@ -299,9 +299,11 @@ void CWebCameraDlg::OnTimer(UINT_PTR nIDEvent)
 	cimage_mfc.BitBlt(dc, 0, 0);
 
 	if (flag == 1) {
-//start눌렀을 때 사진 찍기 시작
-
-
+		//start눌렀을 때 사진 찍기 시작
+		char path[100];
+		sprintf(path, "image\\%d.jpg", image_count);
+		imwrite(path, frame);
+		image_count++;
 	}
 
 
@@ -331,6 +333,17 @@ void CWebCameraDlg::OnDestroy()
 void CWebCameraDlg::OnBnClickedStart()
 {
 	// TODO: 여기에 컨트롤 알림 처리기 코드를 추가합니다.
+	char path[100];
+	wchar_t wpath[100];
+	LPWSTR ptr;
+
+	for (int i = 1; i <= image_count; i++) {
+		sprintf(path, "image\\%d.jpg", i);
+		mbstowcs(wpath, path, strlen(path) + 1);
+		ptr = wpath;
+		DeleteFile(ptr);
+	}
+	image_count = 1;
 	flag = 1;
 }
 

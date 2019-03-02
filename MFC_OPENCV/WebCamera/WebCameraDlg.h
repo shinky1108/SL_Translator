@@ -46,6 +46,7 @@ public:
 	
 	afx_msg bool flag;
 	int index = 0;
+	int image_count = 1;
 	char buf[256];
 	afx_msg void OnBnClickedCancel();
 };
