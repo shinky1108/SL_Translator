@@ -4,7 +4,7 @@ import urllib.request #표준 라이브러리
 import json
 
 client_id = "vIj2xvkAVXo8ArNz48NH" # 개발자센터에서 발급받은 Client ID 값
-client_secret = "baRtDmvE49" # 개발자센터에서 발급받은 Client Secret 값
+client_secret = "Secret value" # 개발자센터에서 발급받은 Client Secret 값
 # 요청할 주소
 url = "https://openapi.naver.com/v1/papago/n2mt"
 
