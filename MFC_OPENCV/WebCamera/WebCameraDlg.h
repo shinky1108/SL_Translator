@@ -38,7 +38,15 @@ public:
 	afx_msg void OnDestroy();
 
 	VideoCapture *capture;
-	Mat tmpImg, frame, mat_gray;
+	Mat tmpImg, frame;
 	CImage cimage_mfc;
 
+	afx_msg void OnBnClickedStart();
+	afx_msg void OnBnClickedEnd();
+	
+	afx_msg bool flag;
+	int index = 0;
+	int image_count = 1;
+	char buf[256];
+	afx_msg void OnBnClickedCancel();
 };
